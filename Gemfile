@@ -18,6 +18,7 @@ gem 'devise'
 gem 'materialize-sass'
 gem 'material_icons'
 gem 'jquery-rails'
+gem 'cancancan', '~> 1.10'
 
 group :test do
   gem "factory_girl_rails"
