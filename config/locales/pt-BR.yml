@@ -1,0 +1,10 @@
+pt-BR:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              blank: está em brancro
+            password:
+              blank: está em branco   
