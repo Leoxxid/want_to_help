@@ -61,6 +61,12 @@ class OrganizationsController < ApplicationController
     end
   end
 
+  # Candidatos da Instituição
+  def candidatos_da_instituicao
+    @organization = Organization.where(["user_id = ?", current_user.id]).select("user_id").take
+    @jobs = Job.where(["user_id = ?", @organization.user.id])
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_organization

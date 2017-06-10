@@ -27,11 +27,19 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
-
   <div class="browser-default">
     <%= label_tag "O que você deseja cadastrar?"%>
   </br>
-    <%= select_tag :tipo_de_cadastro, options_for_select([['Organização Não Governamental', 1], ['Voluntário', 2]]), include_blank: true%>
+    <%= select_tag :tipo_de_cadastro, options_for_select([[
+      'Organização Não Governamental', 1], ['Voluntário', 2]]),
+      include_blank: true%>
+    
+    <% if :tipo_de_cadastro == 1 %>
+    <%= f.label :organization, :value => true %>
+    <% elsif :tipo_de_cadastro == 2 %>
+    <%= f.label :voluntter, :value => true %>
+
+    <%end%>
   </div>
 
   <div class="actions">
@@ -40,7 +48,7 @@
     </button>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
+  <div class="field">
+  <%= render "devise/shared/links" %>
 
 </div>
